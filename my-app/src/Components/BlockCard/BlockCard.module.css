@@ -1,0 +1,37 @@
+.wrapper {
+    margin-top: 70px;
+}
+
+.nameBlock {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 47px;
+    color: #EBEEF5;
+}
+
+.cardWrapper {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.wrapperTop {
+    width: 100%;
+
+    height: 47px;
+    margin-bottom: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.linkSee {
+    color: #BE123C;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    text-decoration: none;
+}
+
