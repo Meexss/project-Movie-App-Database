@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
+import classes from './Button.module.css'
+import {ButtonType} from "../../../Types";
 
-const Button = () => {
+const Button: FC<ButtonType> = (props) => {
     return (
-        <div>
-            
-        </div>
+        <button className={classes.styleButton} style={{width: props.style}}>
+            {props.children}
+        </button>
     );
 };
 

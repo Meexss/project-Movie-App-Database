@@ -3,6 +3,8 @@ import {InfoType, ParamsType} from "../Types";
 import {useParams} from "react-router-dom";
 import MiniCard from "../Components/MiniCard/MiniCard";
 import classes from './OpenCategory.module.css'
+import Title from "../Components/UI/Title/Title";
+import Loader from "../Components/Loader/Loader";
 
 const OpenCategory = () => {
     const {idCategory} = useParams<ParamsType>()
@@ -17,14 +19,24 @@ const OpenCategory = () => {
     console.log(data)
 
     return (
-        <div className={classes.wrapper}>
-            <div className={classes.title}>{idCategory}</div>
-            <div className={classes.wrapper_card}>
-                {data.map(item =>
-                <MiniCard item={item} raiting={false}/>
-                )}
-            </div>
-        </div>
+        <div>
+            {data.length > 0
+                ?   <div className={classes.wrapper}>
+                        <Title>{idCategory}</Title>
+                        <div className={classes.wrapper_card}>
+                            {data.map(item =>
+                            <MiniCard
+                                key={item.id}
+                                id={item.id}
+                                image={item.image}
+                                title={item.title}
+                                imDbRating={item.imDbRating}/>
+                            )}
+                        </div>
+                    </div>
+
+              :     <Loader/>}
+     </div>
     );
 };
 

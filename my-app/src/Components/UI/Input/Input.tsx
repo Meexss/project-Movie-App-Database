@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
+import {inputType} from "../../../Types";
+import classes from './Input.module.css'
 
-const Input = () => {
+const Input: FC<inputType> = (props) => {
     return (
-        <div>
-            
-        </div>
+        <input
+            className={classes.styleInput}
+            style={{width: props.style}}
+            type={props.type}
+            placeholder={props.name}
+        />
     );
 };
 

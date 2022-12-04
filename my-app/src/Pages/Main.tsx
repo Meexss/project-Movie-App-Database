@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import BlockCard from "../Components/BlockCard/BlockCard";
 import {ActorsType, InfoType, InTheaterType} from "../Types";
+import Loader from "../Components/Loader/Loader";
 
 const Main = () => {
     const [films, setFilms] = useState<InfoType[]>([])
@@ -28,12 +29,19 @@ const Main = () => {
 
 
     return (
+    <div>
+
+        {theaters.length > 0 ?
         <div>
                 <BlockCard item={theaters} name={"In Theaters Movies."} apiname='In Theaters' raiting={true}/>
                 <BlockCard item={films} name={"Top 250 Movies"} apiname='Top 250 Movies' raiting={true}/>
                 <BlockCard item={serials} name={"Top 250 TVs"} apiname='Top 250 TVs' raiting={true}/>
 
         </div>
+                :
+                <Loader/>
+        }
+    </div>
     );
 
 };

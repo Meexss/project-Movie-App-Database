@@ -1,0 +1,9 @@
+.styleInput {
+    height: 36px;
+    border: 1px solid #323B54;
+    border-radius: 12px;
+    color: white;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 0 0 0 10px;
+    display: block;
+}

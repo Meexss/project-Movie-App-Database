@@ -11,17 +11,24 @@
     height: 70px;
 }
 
+.wrapperLogo {
+    background: rgba(18, 24, 41, 0.8);
+    backdrop-filter: blur(20px);
+}
+
 .logo_img {
     width: 50px;
     height: 50px;
     background: rgba(18, 24, 41, 0.8);
+    backdrop-filter: blur(20px);
 }
 
 .logo_wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(18, 24, 41, 0.8);
+    background-color: rgba(18, 24, 41, 0.8);
+    backdrop-filter: blur(20px);
 }
 
 .logo_title {
@@ -31,18 +38,12 @@
     font-size: 24px;
     color: white;
     margin: 0 0 0 24px;
+    /*background: rgba(18, 24, 41, 0.8);*/
+    backdrop-filter: blur(20px);
     background-color: transparent;
+
 }
 
-.search {
-    width: 520px;
-    height: 36px;
-    border: 1px solid #323B54;
-    border-radius: 12px;
-    color: white;
-    background: rgba(0, 0, 0, 0.1);
-    padding: 0 0 0 10px;
-}
 
 .signIn {
     color: white;
@@ -51,16 +52,20 @@
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
+    background: rgba(18, 24, 41, 0.8);
+    backdrop-filter: blur(20px);
 }
 
 .wrapper_burger {
     display: flex;
     align-items: center;
     background: rgba(18, 24, 41, 0.8);
+    backdrop-filter: blur(20px);
 }
 
 .burger {
     margin-left: 24px;
+    margin-right: 24px;
     content: '';
     background: #E11D48;
     width: 36px;
@@ -93,6 +98,11 @@
     border-radius: 2px;
     bottom: 12px;
     left: 10px;
+}
+
+a {
+    text-decoration: none;
+    background-color: transparent;
 }
 
 

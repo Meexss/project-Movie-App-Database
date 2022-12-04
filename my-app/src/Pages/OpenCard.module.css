@@ -1,0 +1,106 @@
+.wrapper {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 80px;
+    margin-top: 70px;
+}
+
+.rightBlock {
+    width: 600px;
+}
+
+.imageCard {
+    width: 480px;
+    height: 720px;
+    border-radius: 24px;
+    margin-bottom: 20px;
+}
+
+.wrapperInfo {
+    margin-top: 20px;
+}
+
+
+.text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    color: #8E95A9;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.imageIcon {
+    width: 64px;
+    height: 32px;
+    border-radius: 10px;
+    margin-right: 15px;
+}
+
+.wrapperIcon {
+    display: flex;
+    align-items: center;
+}
+
+.textIcon {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 32px;
+    color: #C3C8D4
+}
+
+.wrapperBlockImg {
+    margin-top: 40px;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.filterImg {
+    position: absolute;
+    top: 0;
+    width: 1300px;
+    height: 480px;
+    background: linear-gradient(180deg, rgba(54, 44, 146, 0.4) 0%, rgba(18, 98, 151, 0.4) 100%);
+    border-radius: 40px;
+}
+
+
+.wrapperImg {
+    background-color: #062032;
+    width: 1300px;
+    height: 480px;
+    margin: 0 auto;
+    border-radius: 40px;
+    object-fit: cover;
+    object-position: 0 -100px;
+}
+
+.wrapperActor {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.wrapperSemilar {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.wrapperBread {
+    position: absolute;
+    padding: 40px;
+    width: 360px;
+    height: 72px;
+    background: rgba(32, 40, 62, 0.8);
+    backdrop-filter: blur(12px);
+    border-radius: 24px;
+    bottom: -66px;
+    left: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
