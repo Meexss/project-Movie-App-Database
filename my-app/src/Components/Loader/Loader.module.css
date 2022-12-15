@@ -1,9 +1,7 @@
 .loader {
-    margin: 0 auto;
-    margin-top: 250px;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 16px solid #3498db;
+    border-top: 16px solid #E11D48;
     width: 120px;
     height: 120px;
     -webkit-animation: spin 2s linear infinite; /* Safari */
@@ -13,4 +11,10 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+.wrapper {
+    min-height: calc(100vh - 70px - 59px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

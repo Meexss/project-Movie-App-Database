@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Dispatch, SetStateAction} from "react";
 
 export interface InfoType
 {
@@ -139,6 +139,7 @@ export interface ButtonType
 {
     children: React.ReactNode
     style: string,
+    do: () => void
 }
 
 export interface OpenCardType
@@ -484,4 +485,62 @@ export interface OpenAllFilmsType
             title: string,
             year: string,
             description: string
+}
+
+export interface PopUpTypes {
+    display: boolean,
+    id: string | undefined,
+    do: () => void,
+}
+
+export interface ComingSoonTypes {
+    items: [
+        {
+            id: string,
+            title: string,
+            fullTitle: string,
+            year: string,
+            releaseState: string,
+            image: string,
+            runtimeMins: string,
+            runtimeStr: string,
+            plot: string,
+            contentRating: string,
+            imDbRating: string,
+            imDbRatingCount: string,
+            metacriticRating: string,
+            genres: string,
+            genreList: [
+                {
+                    key: string,
+                    value: string
+                }
+            ],
+            directors: string,
+            directorList: [
+                {
+                    id: string,
+                    name: string
+                }
+            ],
+            stars: string,
+            starList: [
+                {
+                    id: string,
+                    name: string
+                }
+            ]
+        }
+    ]
+}
+
+export interface SliderType
+{
+    link: string,
+    id: string,
+}
+
+export interface BurgerMenuTypes {
+    type: boolean,
+    setType: Dispatch<SetStateAction<boolean>>,
 }

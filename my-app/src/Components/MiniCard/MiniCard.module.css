@@ -1,5 +1,5 @@
 .wrapper {
-    width: 266px;
+    width: 280px;
     height: 490px;
     position: relative;
     background: rgba(32, 40, 62, 0.8);
@@ -10,16 +10,28 @@
     text-decoration: none;
 }
 
+.wrapper:hover {
+    box-shadow: 0 0 25px rgb(88%, 11%, 28%, 0.5);
+    transform: translateY(-3px);
+}
+
+
 .dark_wrapper {
     composes: wrapper;
 
 }
+.imageIMDB {
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+}
 
 .imagePoser {
-    width: 266px;
-    height: 400px;
+    width: 280px;
+    height: 380px;
     border-radius: 5px;
-    object-fit: cover;
+    object-fit: fill;
+    background-color: transparent;
 }
 
 .mainText {
@@ -39,12 +51,12 @@
 }
 
 .rating {
-    margin-left: 10px;
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
     text-decoration: none;
     color: yellow;
+    text-align: center;
 }
 
 .like {

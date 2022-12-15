@@ -4,7 +4,7 @@ import {ButtonType} from "../../../Types";
 
 const Button: FC<ButtonType> = (props) => {
     return (
-        <button className={classes.styleButton} style={{width: props.style}}>
+        <button className={classes.styleButton} style={{width: props.style}} onClick={() => props.do()}>
             {props.children}
         </button>
     );

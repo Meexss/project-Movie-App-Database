@@ -1,11 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import classes from './Header.module.css'
-import LogIn from "../../Pages/LogIn";
 import Input from "../UI/Input/Input";
+import BurgerMenu from "./BurgerMenu/BurgerMenu";
 
 const Header = () => {
 
+    const [click, setClick] = useState<boolean>(false)
+    const isClicked = () => {
+        click
+            ? setClick(false)
+            : setClick(true)
+    }
+
+    console.log(click)
 
     return (
         <div className={classes.wrapper}>
@@ -25,7 +33,9 @@ const Header = () => {
             <div className={classes.wrapper_burger}>
 
                 <Link className={classes.signIn} to='/logIn'>Log In</Link>
-                <div className={classes.burger}></div>
+                <div className={click ? classes.burger__active : classes.burger} onClick={() => isClicked()}>
+                    <BurgerMenu type={click} setType={setClick}/>
+                </div>
                 <Link className={classes.signIn} to='/SignUp'>Sign Up</Link>
             </div>
         </div>

@@ -1,9 +1,10 @@
 .styleButton {
     height: 36px;
-    background: #7B6EF6;
-    border: 2px solid #7B6EF6;
+    background: #E11D48;
+    border: 2px solid #E11D48;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }

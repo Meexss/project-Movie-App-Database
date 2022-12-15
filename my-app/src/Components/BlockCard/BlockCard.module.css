@@ -1,5 +1,6 @@
 .wrapper {
-    margin-top: 70px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 
 .nameBlock {
@@ -33,5 +34,22 @@
     font-size: 18px;
     line-height: 24px;
     text-decoration: none;
+    cursor: pointer;
 }
 
+.linkSee:hover {
+    transform: scale(1.1);
+}
+
+
+/* target the active bullet */
+span.swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background-color: blue;
+    opacity: 1;
+}
+
+/* target all bullets */
+.swiper-pagination-bullet {
+    background-color: red;
+    opacity: 1;
+}

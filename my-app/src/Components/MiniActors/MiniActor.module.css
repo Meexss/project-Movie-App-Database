@@ -13,7 +13,7 @@
     height: 80px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top;
+    /*object-position: top;*/
     margin-bottom: 5px;
 }
 

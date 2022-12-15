@@ -10,7 +10,7 @@ const MiniActors: FC<MiniActorType> = (props) => {
         <div className={classes.wrapper}>
             {props.image.includes('nopicture.jpg')
                 ? <img className={classes.imageError} src={props.image}/>
-                : <img className={classes.image} src={props.image}/>
+                : <img className={classes.image} src={`https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=400x800&url=${props.image}`}/>
             }
             <span className={classes.title}>{props.name}</span>
             <span className={classes.text}>{props.type}</span>
