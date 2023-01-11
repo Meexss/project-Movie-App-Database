@@ -1,5 +1,5 @@
-import React, {FC, useEffect, useState} from 'react';
-import {ActorImg, MiniActorType} from "../../Types";
+import React, {FC} from 'react';
+import { MiniActorType} from "../../Types";
 import classes from "./MiniActor.module.css";
 import {Link} from "react-router-dom";
 

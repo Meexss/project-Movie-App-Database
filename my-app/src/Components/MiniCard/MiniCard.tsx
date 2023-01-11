@@ -2,9 +2,14 @@ import React from 'react';
 import classes from './MiniCard.module.css'
 import {CardType} from "../../Types";
 import {Link} from "react-router-dom";
+// import { connect } from 'react-redux';
+// import { addItem } from '../../Redux/cart/cart.actions';
+
+// const addItem: any = (item: string) => addItem(item)
 
 const MiniCard: React.FC<CardType> = (props) => {
-    // `https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=600x720&url=${props.image}`?
+
+
 
     return (
         <div className={classes.wrapper}>
@@ -23,5 +28,6 @@ const MiniCard: React.FC<CardType> = (props) => {
         </div>
     );
 };
+
 
 export default MiniCard;

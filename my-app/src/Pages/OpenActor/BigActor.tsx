@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import classes from './BigActor.module.css'
-import {useParams} from "react-router-dom";
+import {Navigate, useParams} from "react-router-dom";
 import {BigActorType, ParamsTypeMore} from "../../Types";
-import Button from "../../Components/UI/Button/Button";
 import InfoCard from "../../Components/InfoCard/InfoCard";
 import Title from "../../Components/UI/Title/Title";
 import MiniCard from "../../Components/MiniCard/MiniCard";
@@ -12,20 +11,25 @@ const BigActor = () => {
 
     const {id} = useParams<ParamsTypeMore>()
     const [actor, setActor] = useState<BigActorType>()
+    const [anyError, setAniError] = useState<string>('')
 
     useEffect(() => {
         fetch(`https://imdb-api.com/en/API/Name/k_53o2jbzt/${id}`)
             .then(response => response.json())
             .then(data => setActor(data))
-    }, []);
+            .catch((e) => {
+                setAniError(e)
+            })
+    }, [id]);
 
     return (
         <div>
+            {anyError && <Navigate to={'/404'}/>}
             {actor ?
                 <div>
                     <div className={classes.wrapper}>
                         <div>
-                            <img className={classes.imageCard} src={`https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=700x1000&url=${actor?.image}`}/>
+                            <img className={classes.imageCard} src={`https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=700x1000&url=${actor?.image}`} alt={''}/>
                         </div>
                         <div className={classes.rightBlock}>
                             <Title>{actor?.name}</Title>

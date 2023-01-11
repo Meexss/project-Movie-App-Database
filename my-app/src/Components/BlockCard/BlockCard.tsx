@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 import classes from './BlockCard.module.css'
-import {BlockType, InTheaterType} from "../../Types";
+import {BlockType} from "../../Types";
 import MiniCard from "../MiniCard/MiniCard";
 import {Link} from "react-router-dom";
 import Title from "../UI/Title/Title";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import {Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import {Navigation, Pagination} from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -31,7 +31,7 @@ const BlockCard: FC<BlockType> = (props) => {
                         navigation={true}
                 >
                     {props.item.map((item, index) =>
-                index < 12 && <SwiperSlide><MiniCard id={item.id} image={item.image} title={item.title} year={item.year}  imDbRating={item.imDbRating}/></SwiperSlide>
+                index < 12 && <SwiperSlide key={item.id}><MiniCard  id={item.id} image={item.image} title={item.title} year={item.year}  imDbRating={item.imDbRating}/></SwiperSlide>
                     )}
                 </Swiper>
             </div>

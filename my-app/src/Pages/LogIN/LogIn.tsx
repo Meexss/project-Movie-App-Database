@@ -1,7 +1,6 @@
 import React from 'react';
 import Title from "../../Components/UI/Title/Title";
 import Input from "../../Components/UI/Input/Input";
-import Button from "../../Components/UI/Button/Button";
 import classes from "./Login.module.css";
 import {Link} from "react-router-dom";
 
@@ -10,7 +9,7 @@ const LogIn = () => {
         <div className={classes.wrapper}>
             <div className={classes.wrapper_right}>
                 <div className={classes.blockStyle}>
-                    <img className={classes.imageStyle} src='/Saly-11.png'/>
+                    <img className={classes.imageStyle} src='/Saly-11.png' alt={''}/>
                 </div>
             </div>
             <div className={classes.wrapper_left}>

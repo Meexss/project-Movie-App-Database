@@ -1,4 +1,5 @@
 import React, {Dispatch, SetStateAction} from "react";
+import title from "./Components/UI/Title/Title";
 
 export interface InfoType
 {
@@ -128,6 +129,34 @@ export interface inputType
     type: string,
     name: string,
     style: string,
+}
+
+export interface SearchDataType
+{
+    id: string,
+    resultType: string,
+    image: string,
+    title: string,
+    description: string
+}
+
+export interface SearchBlockType
+{ item: SearchDataType[]
+}
+export interface SearchCardType
+{
+    id: string,
+    image: string,
+    title: string,
+    type: string,
+}
+
+export interface PaginationType
+{
+    postsPerPage: number,
+    totalPosts: number,
+    paginate: (pageNumber:number) => void,
+    currentPage: number,
 }
 
 export interface TitleType

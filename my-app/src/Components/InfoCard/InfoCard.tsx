@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import classes from './InfoType.module.css'
-import {InfoCardType, OpenCardType} from "../../Types";
+import {InfoCardType} from "../../Types";
 
 
 const InfoCard: FC<InfoCardType> = (props) => {

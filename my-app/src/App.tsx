@@ -8,6 +8,8 @@ import LogIn from "./Pages/LogIN/LogIn";
 import SignUp from "./Pages/SignUP/SignUp";
 import BigActor from "./Pages/OpenActor/BigActor";
 import './index.css'
+import Error from "./Pages/Error/Error";
+
 
 const App = () => {
     return (
@@ -20,6 +22,7 @@ const App = () => {
                     <Route path='category/:idCategory' element={<OpenCategory/>}/>
                     <Route path='logIn' element={<LogIn/>}/>
                     <Route path='SignUp' element={<SignUp/>}/>
+                    <Route path='404' element={<Error/>}/>
                 </Route>
             </Routes>
         </div>

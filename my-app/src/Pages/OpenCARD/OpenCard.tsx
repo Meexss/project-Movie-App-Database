@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useParams} from "react-router-dom";
-import {CardType, InfoType, OpenCardType, ParamsType, ParamsTypeMore, PosterType} from "../../Types";
+import {Navigate, useParams} from "react-router-dom";
+import {OpenCardType, ParamsTypeMore} from "../../Types";
 import Button from "../../Components/UI/Button/Button";
 import Title from "../../Components/UI/Title/Title";
 import classes from './OpenCard.module.css'
@@ -15,6 +15,7 @@ const OpenCard = () => {
 
     const [data, setData] = useState<OpenCardType>()
     const [click, setClick] = useState<boolean>(false)
+    const [anyError, setAniError] = useState<string>('')
 
     const isClicked = () => {
         click
@@ -23,20 +24,24 @@ const OpenCard = () => {
     }
 
     useEffect(() => {
-        fetch(`https://imdb-api.com/en/API/Title/k_53o2jbzt/${id}/Images,Wikipedia,`)
-            .then(response => response.json())
-            .then(data => setData(data))
+      const url = fetch(`https://imdb-api.com/en/API/Title/k_53o2jbzt/${id}/Images,Wikipedia,`)
+          .then(response => response.json())
+          .then(data => setData(data))
+          .catch((e) => {
+              setAniError(e)
+          })
              window.scrollTo(0, 0)
     }, [id]);
 
-    console.log(data)
     return (
+
         <div>
+            {anyError && <Navigate to={'/404'}/>}
             <PopUpWindow id={id} display={click} do={isClicked}/>
             {data ?
                 <div>
                     <div className={classes.wrapperBlockImg}>
-                        <img  className={classes.wrapperImg} src={data?.image}/>
+                        <img  className={classes.wrapperImg} src={data?.image} alt={''}/>
                         <div className={classes.filterImg}></div>
                         <div className={classes.wrapperBread}>
                             <Title>{data?.title}</Title>
@@ -44,23 +49,23 @@ const OpenCard = () => {
                     </div>
                     <div className={classes.wrapper}>
                         <div>
-                            <img className={classes.imageCard} src={`https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=490x720&url=${data?.image}`}/>
-                            <Button style={'100%'} do={isClicked} >Watch trailer</Button>
+                            <img className={classes.imageCard} src={`https://imdb-api.com/API/ResizeImage?apiKey=k_53o2jbzt&size=490x720&url=${data?.image}`} alt={''}/>
+                            <Button style='100%' do={isClicked} >Watch trailer</Button>
                         </div>
                         <div className={classes.rightBlock}>
                             <p className={classes.text}>{data?.plot}</p>
                             <div className={classes.wrapperIcon}>
-                                <img className={classes.imageIcon} src='/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@ 1.png'/>
+                                <img className={classes.imageIcon} src='/MV5BMTk3ODA4Mjc0NF5BMl5BcG5nXkFtZTgwNDc1MzQ2OTE@ 1.png' alt={''}/>
                                 <span className={classes.textIcon}> {data?.imDbRating} / 10.0</span>
                             </div>
                             <div className={classes.wrapperInfo}>
                                 <InfoCard text='Type' value={data?.type}/>
-                                <InfoCard text={data?.type == 'Movie' ? 'Release Date:' : 'First air date' } value={data?.releaseDate}/>
-                                {data?.type == 'Movie'
-                                    ? <InfoCard text='Budget' value={data?.boxOffice.budget == '' ? '-' : data?.boxOffice.budget }/>
+                                <InfoCard text={data?.type === 'Movie' ? 'Release Date:' : 'First air date' } value={data?.releaseDate}/>
+                                {data?.type === 'Movie'
+                                    ? <InfoCard text='Budget' value={data?.boxOffice.budget === '' ? '-' : data?.boxOffice.budget }/>
                                     : <InfoCard text='Last air date' value={data?.tvSeriesInfo.yearEnd}/>
                                 }
-                                {data?.type == 'Movie'
+                                {data?.type === 'Movie'
                                     ? <InfoCard text='Run time' value={data?.runtimeStr}/>
                                     : <InfoCard text='No. of Seasons' value={data?.tvSeriesInfo.seasons.length}/>
                                 }

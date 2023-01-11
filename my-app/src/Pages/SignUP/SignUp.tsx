@@ -2,8 +2,6 @@ import React from 'react';
 import classes from "./SignUp.module.css";
 import Title from "../../Components/UI/Title/Title";
 import Input from "../../Components/UI/Input/Input";
-import {Link} from "react-router-dom";
-import Button from "../../Components/UI/Button/Button";
 
 const SignUp = () => {
     return (
@@ -21,7 +19,7 @@ const SignUp = () => {
 
             <div className={classes.wrapper_right}>
                 <div className={classes.blockStyle}>
-                    <img className={classes.imageStyle} src='/Sign Up _ LinkedIn (1).png'/>
+                    <img className={classes.imageStyle} src='/Sign Up _ LinkedIn (1).png' alt={''}/>
                 </div>
             </div>
         </div>

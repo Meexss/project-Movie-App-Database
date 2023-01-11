@@ -1,0 +1,12 @@
+.wrapper {
+    background-color: transparent;
+    width: 520px;
+    background: rgba(18, 24, 41, 0.8);
+    /*backdrop-filter: blur(50px);*/
+    border-radius: 10px;
+    min-height: 250px;
+    padding: 5px;
+    position: absolute;
+    left: 0;
+    top: 40px
+}
