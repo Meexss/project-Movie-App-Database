@@ -16,7 +16,6 @@ const SignUp = () => {
                     {/*<Button style='486px'>Send</Button>*/}
                 </form>
             </div>
-
             <div className={classes.wrapper_right}>
                 <div className={classes.blockStyle}>
                     <img className={classes.imageStyle} src='/Sign Up _ LinkedIn (1).png' alt={''}/>
