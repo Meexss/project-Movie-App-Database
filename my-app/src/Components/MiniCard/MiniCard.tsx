@@ -2,14 +2,16 @@ import React from 'react';
 import classes from './MiniCard.module.css'
 import {CardType} from "../../Types";
 import {Link} from "react-router-dom";
-// import { connect } from 'react-redux';
-// import { addItem } from '../../Redux/cart/cart.actions';
-
-// const addItem: any = (item: string) => addItem(item)
+import {useDispatch} from "react-redux";
+import {addCard} from "../Redux/action";
 
 const MiniCard: React.FC<CardType> = (props) => {
 
+const dispatch = useDispatch()
 
+const onAddCard = (id: string) => {
+    dispatch(addCard(id))
+}
 
     return (
         <div className={classes.wrapper}>
@@ -23,7 +25,7 @@ const MiniCard: React.FC<CardType> = (props) => {
             </div> }
             </Link>
                 <Link className={classes.like} to='/'>
-                    <img className={classes.imageLike} src='/Favorite.png' alt='Like'/>
+                    <img className={classes.imageLike} onClick={() => onAddCard(props.id)} src='/Favorite.png' alt='Like'/>
                 </Link>
         </div>
     );

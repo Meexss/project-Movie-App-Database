@@ -49,3 +49,20 @@
     text-decoration: none;
     display: block;
 }
+
+.styleButton {
+    height: 36px;
+    background: #E11D48;
+    border: 2px solid #E11D48;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.textError {
+    display: block;
+    color: #FFFFFF;
+    font-size: 10px;
+}

@@ -9,10 +9,14 @@ import SignUp from "./Pages/SignUP/SignUp";
 import BigActor from "./Pages/OpenActor/BigActor";
 import './index.css'
 import Error from "./Pages/Error/Error";
+import store from "./Components/Redux/store";
+import {Provider} from "react-redux";
+import Favorite from "./Pages/Favorite/Favorite";
 
 
 const App = () => {
     return (
+        <Provider store={store}>
         <div className='wrapper'>
             <Routes>
                 <Route path='/' element={<Layout/>}>
@@ -23,9 +27,11 @@ const App = () => {
                     <Route path='logIn' element={<LogIn/>}/>
                     <Route path='SignUp' element={<SignUp/>}/>
                     <Route path='404' element={<Error/>}/>
+                    <Route path='like' element={<Favorite/>}/>
                 </Route>
             </Routes>
         </div>
+        </Provider>
     );
 };
 

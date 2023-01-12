@@ -131,6 +131,16 @@ export interface inputType
     style: string,
 }
 
+export type InputAuthType = {
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void,
+    value: string,
+    name: string,
+    type: "email" | "password" | "text",
+    placeholder: "Enter your email..." | "Enter your password..." | "Enter username...",
+    label: "Email" | "Пароль" | "Имя пользователя",
+    error: string
+}
+
 export interface SearchDataType
 {
     id: string,

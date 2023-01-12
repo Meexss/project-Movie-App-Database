@@ -6,4 +6,16 @@
     background: rgba(0, 0, 0, 0.1);
     padding: 0 0 0 10px;
     display: block;
+    width: 320px;
+}
+
+.error {
+    composes: styleInput;
+    border-color: #BE123C;
+}
+
+.text {
+    display: block;
+    color: #FFFFFF;
+    padding-bottom: 10px;
 }

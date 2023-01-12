@@ -22,7 +22,7 @@ const Header = () => {
        .then(data => setSearch(data.results))
     }, [text.length > 3]);
 
-
+    console.log(localStorage.getItem('active'))
     return (
         <div className={classes.wrapper}>
 
@@ -49,11 +49,10 @@ const Header = () => {
             </div>
             <div className={classes.wrapper_burger}>
 
-                <Link className={classes.signIn} to='/logIn'>Log In</Link>
+                {localStorage.getItem('active') ? <span className={classes.signIn}>User - {localStorage.getItem('active')}</span> : <Link className={classes.signIn} to='/logIn'>Log In</Link>}
                 <div className={click ? classes.burger__active : classes.burger} onClick={() => isClicked()}>
                     <BurgerMenu type={click} setType={setClick}/>
                 </div>
-                <Link className={classes.signIn} to='/SignUp'>Sign Up</Link>
             </div>
         </div>
     );

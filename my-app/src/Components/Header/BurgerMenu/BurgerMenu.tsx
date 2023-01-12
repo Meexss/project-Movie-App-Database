@@ -10,6 +10,7 @@ const BurgerMenu: FC<BurgerMenuTypes> = (props) => {
             <Link to={`/category/Coming Soon`}><span className={classes.text}>Coming Soon</span></Link>
             <Link to={`/category/Top 250 Movies`}><span className={classes.text}>Top 250 Movies</span></Link>
             <Link to={`/category/Top 250 TVs`}><span className={classes.text}>Top 250 TVs</span></Link>
+            <Link to={`/like`}><span className={classes.text}>Favorite</span></Link>
         </div>
     );
 };
