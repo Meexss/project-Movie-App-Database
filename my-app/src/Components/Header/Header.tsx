@@ -48,8 +48,7 @@ const Header = () => {
                 }
             </div>
             <div className={classes.wrapper_burger}>
-
-                {localStorage.getItem('active') ? <span className={classes.signIn}>User - {localStorage.getItem('active')}</span> : <Link className={classes.signIn} to='/logIn'>Log In</Link>}
+                {localStorage.getItem('active') ? <span onClick={() => localStorage.removeItem('active')} className={classes.signIn}>User - {localStorage.getItem('active')}</span> : <Link className={classes.signIn}  to='/logIn'>Log In</Link>}
                 <div className={click ? classes.burger__active : classes.burger} onClick={() => isClicked()}>
                     <BurgerMenu type={click} setType={setClick}/>
                 </div>
